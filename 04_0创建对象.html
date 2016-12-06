@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 创建people对象 -->
+	<script type="text/javascript">
+	    // 第一种方式：定义并创建对象实例
+	    // new关键字 Object是最大的对象，所有对象的父类
+		people = new Object();
+		people.name = "程前鹏";
+		people.age = "18";
+		// 另外一种
+		// people = {name:"红红",age:"18"};
+		// 属性应用
+		document.write("name:"+people.name+"<br/>age:"+people.age);
+
+		// 第二种：使用函数来定义对象，然后创建新的对象实例（使用较多）；
+		function people(name,age) {
+			// body...
+			this.name = name;
+			this.age = age;
+		}
+        var student  = new people("晓化",18);
+         document.write("name"+student.name+"<br/>age:"+student.age);
+	</script>
+</body>
+</html>

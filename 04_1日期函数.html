@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<!-- onload 属性在对象已加载时触发。 -->
+<!-- onload 常用在 <body> 中，一旦完全加载所有内容（包括图像、脚本文件、CSS 文件等），就执行一段脚本。 -->
+<body onload="startTime()">
+<div id="timeText"></div>
+<script>
+    // var date  = new Date();  // 声明
+    // console.log(date.getTime());  // 提倡使用的  得到 距离 1970年的毫秒数
+    // console.log(date.valueOf());//返回 Date 对象的原始值。
+    // // 直接使用
+    // console.log(Date.now());
+    // console.log(+new Date());
+   function startTime() {
+   	// body...
+   	var today = new Date();
+   	var year = today.getFullYear();
+   	var month = today.getMonth();
+   	var date = today.getDate();
+   	var day = today.getDay();
+   	var h = today.getHours();
+   	var m = today.getMinutes();
+   	var s = today.getSeconds();
+   	document.getElementById('timeText').innerHTML ="现在时刻是:<br/><br/>"+year+"年"+month+"月"+date+"日"+"星期:"+day+"  "+h+":"+m+":"+s;
+    var t = setTimeout(function () {
+    	// body...
+    	startTime();
+    },1000);
+   }
+
+   function checkTime(i) {
+   	// body...
+   	if (i<10) {
+   		i = "0"+i;
+   	}
+   	return i;
+   }
+</script>
+</body>
+</html>
